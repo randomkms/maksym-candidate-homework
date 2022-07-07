@@ -40,7 +40,7 @@ This will be due at the start of the technical interview.
 
 ## How to complete the homework
 
-- Fork this into a repository name-candidate-homework on your GitHub account (where name is your name or github user)
+- Clone this into a repository name-candidate-homework on your GitHub account (where name is your name or github user)
 - Do the assignments and commit/push to your public repository (make sure its public!)
 - Send us the url to clone your repo
 
