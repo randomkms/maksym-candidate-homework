@@ -7,12 +7,34 @@
     @Styles.Render("~/Content/css")
 </head>
 <body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="more options">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Bonus Challenge Application", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Simple Anagrams Search Sample", "SimpleAnagrams", "Anagram")</li>
+                    <li>@Html.ActionLink("Hard Anagrams Search Sample", "HardAnagrams", "Anagram")</li>
+                    <li>@Html.ActionLink("Find Anagrams", "FindAnagrams", "Anagram")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
     <div>
         @RenderBody()
     </div>
+    <footer class="panel-footer navbar-fixed-bottom">
+        <p class="text-center">@DateTime.Now.Year - Anagrams bonus challenge</p>
+    </footer>
 
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
-
 </body>
 </html>

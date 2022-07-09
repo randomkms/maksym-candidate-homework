@@ -68,16 +68,11 @@ namespace _2.Puzzle.Medium
             }
 
             Console.WriteLine("\r\n\r\nHarderList complete.\r\n\r\n");
-
         }
 
         static IEnumerable<IEnumerable<string>> Output(IEnumerable<string> input)
         {
-            var output = new List<List<string>>();
-
-            // YOUR CODE GOES HERE
-
-            return output;
+            return new AnagramsChecker().GetAnagrams(input);
         }
     }
 }

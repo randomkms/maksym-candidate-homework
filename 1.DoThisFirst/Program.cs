@@ -28,7 +28,31 @@ namespace _1.WarmUp.Easy
              
              */
 
-            // YOUR CODE GOES HERE :)
+            for (int i = 1; i <= 100; i++)
+            {
+                var isMultipleOf3 = i % 3 == 0;
+                var isMultipleOf5 = i % 5 == 0;
+
+                if (isMultipleOf3 && isMultipleOf5)
+                {
+                    Console.WriteLine("Fizz Buzz");
+                    continue;
+                }
+
+                if (isMultipleOf3)
+                {
+                    Console.WriteLine("Fizz");
+                    continue;
+                }
+
+                if (isMultipleOf5)
+                {
+                    Console.WriteLine("Buzz");
+                    continue;
+                }
+
+                Console.WriteLine(i);
+            }
 
 
 

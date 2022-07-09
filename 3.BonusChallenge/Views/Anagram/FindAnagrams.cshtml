@@ -1,0 +1,22 @@
+﻿
+@using _3.BonusChallenge
+@using _3.BonusChallenge.ViewModels
+@model AnagramsSearchViewModel
+@{
+    ViewBag.Title = "Find Anagrams";
+}
+
+<div class="row" style="margin: 5px">
+    <div class="center-block col-md-4" style="float: none">
+        <h4>Inpute words or phrases separated by "@Constants.WordsToSearchForAnagramsSeparator" to search for anagrams among them</h4>
+        @using (Html.BeginForm("FindAnagrams", "Anagram", FormMethod.Post))
+        {
+            @Html.TextBox("WordsInput", null, new { @class = "form-control", style = "margin-bottom: 5px" })
+            <input type="submit" class="btn btn-primary" style="margin: 5px" value="Find anagrams" />
+        }
+    </div>
+</div>
+
+@{
+    Html.RenderPartial("Anagrams", Model);
+}

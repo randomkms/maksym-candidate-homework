@@ -1,0 +1,30 @@
+﻿@using _3.BonusChallenge.ViewModels
+@model AnagramsSearchViewModel
+@{
+    ViewBag.Title = "Anagrams search results";
+}
+
+@if (Model.InputWords.Count > 0)
+{
+    <div class="row" style="margin: 5px">
+        <div class="center-block col-md-4" style="float: none">
+            <h4>Inputed words/phrases:</h4>
+            <ul class="list-inline" style="margin: 5px">
+                @foreach (var inputWord in Model.InputWords)
+                {
+                    <li>@inputWord</li>
+                }
+            </ul>
+            <h4>Found anagrams:</h4>
+            <ul class="list-group" style="margin: 5px">
+                @foreach (var anagram in Model.FoundAnagrams)
+                {
+                    <li class="list-group-item">
+                        <span class="badge">@anagram.Words.Count</span>
+                        @anagram.ToString()
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+}
