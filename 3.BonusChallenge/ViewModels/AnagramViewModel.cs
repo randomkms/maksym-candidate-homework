@@ -7,14 +7,10 @@ namespace _3.BonusChallenge.ViewModels
     {
         public AnagramViewModel(IEnumerable<string> words)
         {
-            Words = words?.ToList() ?? new List<string>();
+            AnagramWords = words?.ToList() ?? new List<string>();
         }
 
-        public List<string> Words { get; set; }
+        public List<string> AnagramWords { get; set; }
 
-        public override string ToString()
-        {
-            return string.Join(", ", Words);
-        }
     }
 }

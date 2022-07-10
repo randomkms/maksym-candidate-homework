@@ -1,4 +1,5 @@
-﻿@using _3.BonusChallenge.ViewModels
+﻿@using _3.BonusChallenge
+@using _3.BonusChallenge.ViewModels
 @model AnagramsSearchViewModel
 @{
     ViewBag.Title = "Anagrams search results";
@@ -20,8 +21,9 @@
                 @foreach (var anagram in Model.FoundAnagrams)
                 {
                     <li class="list-group-item">
-                        <span class="badge">@anagram.Words.Count</span>
-                        @anagram.ToString()
+                        @string.Join(Constants.WordsToSearchForAnagramsSeparator + " ", anagram.AnagramWords)
+                        @{var badgeStyle = anagram.AnagramWords.Count > 1 ? "progress-bar-success" : string.Empty;}
+                        <span class="badge @badgeStyle">@anagram.AnagramWords.Count</span>
                     </li>
                 }
             </ul>

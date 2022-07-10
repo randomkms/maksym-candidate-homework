@@ -28,7 +28,7 @@ namespace _1.WarmUp.Easy
              
              */
 
-            for (int i = 1; i <= 100; i++)
+            for (var i = 1; i <= 100; i++)
             {
                 var isMultipleOf3 = i % 3 == 0;
                 var isMultipleOf5 = i % 5 == 0;
