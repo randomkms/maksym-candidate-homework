@@ -25,6 +25,10 @@
                         @string.Join(Constants.AnagramsOutputSeparator, anagram.AnagramWords)
                         @{var badgeStyle = anagram.AnagramWords.Count > 1 ? "progress-bar-success" : string.Empty;}
                         <span class="badge @badgeStyle">@anagram.AnagramWords.Count</span>
+                        @if (anagram.HasPhrases)
+                        {
+                            <span class="badge progress-bar-warning">Has phrases</span>
+                        }
                     </li>
                 }
             </ul>

@@ -8,9 +8,12 @@ namespace _3.BonusChallenge.ViewModels
         public AnagramViewModel(IEnumerable<string> words)
         {
             AnagramWords = words?.ToList() ?? new List<string>();
+            HasPhrases = AnagramWords.Any(w => w.Any(c => char.IsWhiteSpace(c)));
         }
 
-        public List<string> AnagramWords { get; set; }
+        public IReadOnlyList<string> AnagramWords { get; }
+
+        public bool HasPhrases { get; }
 
     }
 }
