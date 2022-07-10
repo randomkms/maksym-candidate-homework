@@ -2,7 +2,8 @@
 {
     public static class Constants
     {
-        public const char WordsToSearchForAnagramsSeparator = ',';
+        public const char InputWordsSeparator = ',';
+        public const string AnagramsOutputSeparator = ", ";
         public const int OneDayInSeconds = 86400;
     }
 }

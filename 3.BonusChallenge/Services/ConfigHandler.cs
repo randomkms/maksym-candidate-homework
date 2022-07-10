@@ -6,8 +6,8 @@ namespace _3.BonusChallenge.Services
 {
     public class ConfigHandler : IConfigHandler
     {
-        public IReadOnlyList<string> SimpleAnagramsList { get; } = GetConfig("SimpleAnagramsList").Split(Constants.WordsToSearchForAnagramsSeparator);
-        public IReadOnlyList<string> HardAnagramsList { get; } = GetConfig("HardAnagramsList").Split(Constants.WordsToSearchForAnagramsSeparator);
+        public IReadOnlyList<string> SimpleAnagramsList { get; } = GetConfig("SimpleAnagramsList").Split(Constants.InputWordsSeparator);
+        public IReadOnlyList<string> HardAnagramsList { get; } = GetConfig("HardAnagramsList").Split(Constants.InputWordsSeparator);
 
         private static string GetConfig(string key)
         {

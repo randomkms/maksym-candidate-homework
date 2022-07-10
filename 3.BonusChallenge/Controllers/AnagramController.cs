@@ -30,7 +30,7 @@ namespace _3.BonusChallenge.Controllers
             if (string.IsNullOrWhiteSpace(wordsInput))
                 return RedirectToAction(nameof(FindAnagrams));
 
-            var wordsInputList = wordsInput.Split(Constants.WordsToSearchForAnagramsSeparator);
+            var wordsInputList = wordsInput.Split(Constants.InputWordsSeparator);
             if (wordsInputList.All(w => string.IsNullOrWhiteSpace(w)))
                 return RedirectToAction(nameof(FindAnagrams));
 

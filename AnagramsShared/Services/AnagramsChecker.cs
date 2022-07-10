@@ -22,7 +22,7 @@ namespace AnagramsShared.Services
             {
                 var word = normalizedWords.First();
                 var anagrams = normalizedWords.Where(w => IsAnagram(w, word)).ToList();
-                anagrams.Sort();
+                anagrams.Sort((a1, a2) => string.Compare(a1, a2, StringComparison.InvariantCultureIgnoreCase));
                 output.Add(anagrams);
 
                 foreach (var anagram in anagrams)
