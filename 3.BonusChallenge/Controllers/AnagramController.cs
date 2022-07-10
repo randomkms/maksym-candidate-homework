@@ -18,6 +18,7 @@ namespace _3.BonusChallenge.Controllers
             _configHandler = configHandler;
         }
 
+        [OutputCache(Duration = Constants.OneDayInSeconds)]
         public ActionResult FindAnagrams()
         {
             return View(new AnagramsSearchViewModel());
@@ -26,16 +27,23 @@ namespace _3.BonusChallenge.Controllers
         [HttpPost]
         public ActionResult FindAnagrams(string wordsInput)
         {
+            if (string.IsNullOrWhiteSpace(wordsInput))
+                return RedirectToAction(nameof(FindAnagrams));
+
             var wordsInputList = wordsInput.Split(Constants.WordsToSearchForAnagramsSeparator);
+            if (wordsInputList.All(w => string.IsNullOrWhiteSpace(w)))
+                return RedirectToAction(nameof(FindAnagrams));
 
             return View(GetAnagramsSearchResults(wordsInputList));
         }
 
+        [OutputCache(Duration = Constants.OneDayInSeconds)]
         public ActionResult SimpleAnagrams()
         {
             return View("Anagrams", GetAnagramsSearchResults(_configHandler.SimpleAnagramsList));
         }
 
+        [OutputCache(Duration = Constants.OneDayInSeconds)]
         public ActionResult HardAnagrams()
         {
             return View("Anagrams", GetAnagramsSearchResults(_configHandler.HardAnagramsList));
