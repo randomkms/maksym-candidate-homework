@@ -174,8 +174,9 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="packages.config" />
     <Content Include="README.md" />
-    <Content Include="Views\Anagram\Anagrams.cshtml" />
+    <Content Include="Views\Anagram\SampleAnagrams.cshtml" />
     <Content Include="Views\Anagram\FindAnagrams.cshtml" />
+    <Content Include="Views\Anagram\_anagrams.cshtml" />
   </ItemGroup>
   <Import Project="..\AnagramsShared\AnagramsShared.projitems" Label="Shared" />
   <PropertyGroup>

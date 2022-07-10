@@ -40,13 +40,13 @@ namespace _3.BonusChallenge.Controllers
         [OutputCache(Duration = Constants.OneDayInSeconds)]
         public ActionResult SimpleAnagrams()
         {
-            return View("Anagrams", GetAnagramsSearchResults(_configHandler.SimpleAnagramsList));
+            return View("SampleAnagrams", GetAnagramsSearchResults(_configHandler.SimpleAnagramsList));
         }
 
         [OutputCache(Duration = Constants.OneDayInSeconds)]
         public ActionResult HardAnagrams()
         {
-            return View("Anagrams", GetAnagramsSearchResults(_configHandler.HardAnagramsList));
+            return View("SampleAnagrams", GetAnagramsSearchResults(_configHandler.HardAnagramsList));
         }
 
         private AnagramsSearchViewModel GetAnagramsSearchResults(IReadOnlyCollection<string> normalizedWordsInput)
