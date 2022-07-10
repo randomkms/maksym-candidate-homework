@@ -1,6 +1,7 @@
 using _3.BonusChallenge.Interfaces;
 using _3.BonusChallenge.Services;
-using _3.BonusChallenge_1;
+using AnagramsShared.Interfaces;
+using AnagramsShared.Services;
 using System;
 
 using Unity;

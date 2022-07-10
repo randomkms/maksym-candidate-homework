@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace _3.BonusChallenge.Interfaces
+namespace AnagramsShared.Interfaces
 {
     public interface IAnagramsChecker
     {

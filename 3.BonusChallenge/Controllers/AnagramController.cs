@@ -1,6 +1,6 @@
 ﻿using _3.BonusChallenge.Interfaces;
 using _3.BonusChallenge.ViewModels;
-using System;
+using AnagramsShared.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;

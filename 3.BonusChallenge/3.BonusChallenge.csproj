@@ -133,12 +133,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\IAnagramsChecker.cs" />
     <Compile Include="Interfaces\IConfigHandler.cs" />
     <Compile Include="ViewModels\AnagramsSearchViewModel.cs" />
     <Compile Include="ViewModels\AnagramViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\AnagramsChecker.cs" />
     <Compile Include="Services\ConfigHandler.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -165,7 +163,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -180,6 +177,7 @@
     <Content Include="Views\Anagram\Anagrams.cshtml" />
     <Content Include="Views\Anagram\FindAnagrams.cshtml" />
   </ItemGroup>
+  <Import Project="..\AnagramsShared\AnagramsShared.projitems" Label="Shared" />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

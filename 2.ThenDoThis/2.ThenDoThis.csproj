@@ -6,4 +6,6 @@
     <RootNamespace>_2.Puzzle.Medium</RootNamespace>
   </PropertyGroup>
 
+  <Import Project="..\AnagramsShared\AnagramsShared.projitems" Label="Shared" />
+
 </Project>

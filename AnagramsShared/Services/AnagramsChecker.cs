@@ -1,46 +1,46 @@
-﻿using _3.BonusChallenge.Interfaces;
+﻿using AnagramsShared.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace _3.BonusChallenge.Services
+namespace AnagramsShared.Services
 {
     public class AnagramsChecker : IAnagramsChecker
     {
         public IEnumerable<IEnumerable<string>> GetAnagrams(IEnumerable<string> words)
         {
-            var output = new List<List<string>>();
+            if (words == null)
+                throw new ArgumentNullException(nameof(words));
 
-            var stringsToCheck = words
+            var output = new List<List<string>>();
+            var normalizedWords = words
                 .Where(s => !string.IsNullOrWhiteSpace(s))
                 .Select(s => s.Trim())
                 .ToHashSet();
-            var normalizedWords = stringsToCheck.ToArray();
 
-            foreach (var str in normalizedWords)
+            while (normalizedWords.Any())
             {
-                if (!stringsToCheck.Contains(str))
-                    continue;
-
-                var anagrams = stringsToCheck.Where(s => IsAnagram(s, str)).Distinct().ToList();
-                if (!anagrams.Any())
-                    continue;
-
+                var word = normalizedWords.First();
+                var anagrams = normalizedWords.Where(w => IsAnagram(w, word)).ToList();
                 anagrams.Sort();
                 output.Add(anagrams);
 
                 foreach (var anagram in anagrams)
-                    stringsToCheck.Remove(anagram);
+                    normalizedWords.Remove(anagram);
             }
 
-            output.Sort((l1, l2) => l1.First().CompareTo(l2.First()));
+            output.Sort((l1, l2) => string.Compare(l1.First(), l2.First(), StringComparison.InvariantCultureIgnoreCase));
 
             return output;
         }
 
         private static bool IsAnagram(string a, string b)
         {
-            a = a.Replace(" ", string.Empty);
-            b = b.Replace(" ", string.Empty);
+            if (ReferenceEquals(a, b)) // optimization for passing the same string
+                return true;
+
+            a = RemoveWhitespaces(a);
+            b = RemoveWhitespaces(b);
             if (a.Length != b.Length)
                 return false;
 
@@ -57,6 +57,11 @@ namespace _3.BonusChallenge.Services
             }
 
             return true;
+        }
+
+        private static string RemoveWhitespaces(string input)
+        {
+            return new string(input.Where(c => !char.IsWhiteSpace(c)).ToArray());
         }
 
         private static Dictionary<char, int> GetCharsFrequency(string input)
