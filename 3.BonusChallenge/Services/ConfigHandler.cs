@@ -13,7 +13,7 @@ namespace _3.BonusChallenge.Services
         {
             var config = ConfigurationManager.AppSettings[key];
             if (config == null)
-                throw new SettingsPropertyNotFoundException($"'{key}' was nout found in application config");
+                throw new SettingsPropertyNotFoundException($"'{key}' was not found in application config");
 
             return config;
         }

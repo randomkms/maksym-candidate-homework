@@ -14,12 +14,12 @@ namespace _3.BonusChallenge
     public static class UnityConfig
     {
         #region Unity Container
-        private static Lazy<IUnityContainer> container =
+        private static readonly Lazy<IUnityContainer> container =
           new Lazy<IUnityContainer>(() =>
           {
-              var container = new UnityContainer();
-              RegisterTypes(container);
-              return container;
+              var unityContainer = new UnityContainer();
+              RegisterTypes(unityContainer);
+              return unityContainer;
           });
 
         /// <summary>

@@ -28,7 +28,7 @@ namespace _3.BonusChallenge.Controllers
         {
             var wordsInputList = wordsInput.Split(Constants.WordsToSearchForAnagramsSeparator);
 
-            return View("FindAnagrams", GetAnagramsSearchResults(wordsInputList));
+            return View(GetAnagramsSearchResults(wordsInputList));
         }
 
         public ActionResult SimpleAnagrams()
@@ -41,7 +41,7 @@ namespace _3.BonusChallenge.Controllers
             return View("Anagrams", GetAnagramsSearchResults(_configHandler.HardAnagramsList));
         }
 
-        private AnagramsSearchViewModel GetAnagramsSearchResults(IEnumerable<string> normalizedWordsInput)
+        private AnagramsSearchViewModel GetAnagramsSearchResults(IReadOnlyCollection<string> normalizedWordsInput)
         {
             var anagrams = _anagramsChecker.GetAnagrams(normalizedWordsInput)
                 .Select(words => new AnagramViewModel(words));

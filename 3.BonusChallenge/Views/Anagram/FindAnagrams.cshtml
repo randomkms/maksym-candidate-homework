@@ -8,7 +8,7 @@
 
 <div class="row" style="margin: 5px">
     <div class="center-block col-md-4" style="float: none">
-        <h4>Inpute words or phrases separated by "@Constants.WordsToSearchForAnagramsSeparator" to search for anagrams among them</h4>
+        <h4>Input words or phrases separated by "@Constants.WordsToSearchForAnagramsSeparator" to search for anagrams among them</h4>
         @using (Html.BeginForm("FindAnagrams", "Anagram", FormMethod.Post))
         {
             @Html.TextBox("WordsInput", null, new { @class = "form-control", style = "margin-bottom: 5px" })
