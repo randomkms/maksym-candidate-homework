@@ -21,7 +21,7 @@
             <ul class="list-group" style="margin: 5px">
                 @foreach (var anagram in Model.FoundAnagrams)
                 {
-                    <li class="list-group-item">
+                    <li class="list-group-item anagram">
                         @string.Join(Constants.AnagramsOutputSeparator, anagram.AnagramWords)
                         @{var badgeStyle = anagram.AnagramWords.Count > 1 ? "progress-bar-success" : string.Empty;}
                         <span class="badge @badgeStyle">@anagram.AnagramWords.Count</span>
