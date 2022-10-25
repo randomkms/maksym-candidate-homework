@@ -7,7 +7,7 @@ namespace AnagramsShared.Services
 {
     public class AnagramsChecker : IAnagramsChecker
     {
-        public IEnumerable<IEnumerable<string>> GetAnagrams(IEnumerable<string> words)
+        public IEnumerable<IEnumerable<string>> GetAnagrams(IEnumerable<string> words) //TODO add unit tests
         {
             if (words == null)
                 throw new ArgumentNullException(nameof(words));
